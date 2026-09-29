@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Attendance Management System</h1>
+        <p>Manage student attendance easily</p>
+    </header>
+
+    <div class="container">
+
+        <!-- Dashboard -->
+        <section class="dashboard">
+            <div class="card">
+                <h3>Total Students</h3>
+                <p id="totalStudents">0</p>
+            </div>
+
+            <div class="card present-card">
+                <h3>Present</h3>
+                <p id="presentCount">0</p>
+            </div>
+
+            <div class="card absent-card">
+                <h3>Absent</h3>
+                <p id="absentCount">0</p>
+            </div>
+
+            <div class="card percentage-card">
+                <h3>Attendance %</h3>
+                <p id="attendancePercentage">0%</p>
+            </div>
+        </section>
+
+        <!-- Add Student -->
+        <section class="panel">
+            <h2>Add Student</h2>
+
+            <div class="form">
+                <input type="text" id="studentName" placeholder="Enter student name">
+                <input type="text" id="studentRoll" placeholder="Enter roll number">
+                <button onclick="addStudent()">Add Student</button>
+            </div>
+        </section>
+
+        <!-- Attendance -->
+        <section class="panel">
+            <div class="attendance-header">
+                <h2>Mark Attendance</h2>
+
+                <div>
+                    <label for="attendanceDate">Date:</label>
+                    <input type="date" id="attendanceDate">
+                </div>
+            </div>
+
+            <div class="search-box">
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search by name or roll number..."
+                    onkeyup="displayStudents()"
+                >
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>S.No</th>
+                            <th>Roll Number</th>
+                            <th>Student Name</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="studentTable">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Attendance History -->
+        <section class="panel">
+            <h2>Attendance History</h2>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Roll Number</th>
+                            <th>Student Name</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="historyTable">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>© 2026 Attendance Management System</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
